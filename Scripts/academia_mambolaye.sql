@@ -1,6 +1,7 @@
 CREATE SCHEMA academia_mambolaye;
 
 USE academia_mambolaye;
+
 -- ALUMNOS
 CREATE TABLE IF NOT EXISTS alumno(
 id_alumno INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -42,27 +43,6 @@ id_genero INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 nombre_genero VARCHAR(15) NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS horario_clase(
-id_horario INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-dia VARCHAR(20) NOT NULL,
-hora_inicio TIME,
-hora_fin TIME
-);
-
-CREATE TABLE IF NOT EXISTS sede(
-id_sede INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-nombre_sede VARCHAR(100) NOT NULL,
-direccion VARCHAR(150) NOT NULL,
-telefono INT NOT NULL,
-id_director INT NOT NULL
-);
-
-#Agregando Nivel
-CREATE TABLE IF NOT EXISTS nivel(
-id_nivel INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-descripcion VARCHAR(20) NOT NULL
-);
-
 CREATE TABLE IF NOT EXISTS estilo(
 id_estilo INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 nombre_estilo VARCHAR(20) NOT NULL,
@@ -70,13 +50,34 @@ id_genero INT NOT NULL,
 FOREIGN KEY (id_genero) REFERENCES academia_mambolaye.genero_musical(id_genero)
 );
 
+
+CREATE TABLE IF NOT EXISTS horario_clase(
+id_horario INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+dia VARCHAR(20) NOT NULL,
+hora_inicio TIME,
+hora_fin TIME
+);
+
 CREATE TABLE IF NOT EXISTS director(
 id_director INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 dni INT NOT NULL,
 nombre VARCHAR(50) NOT NULL,
-apellido VARCHAR(50) NOT NULL,
-id_sede INT NOT NULL,
-FOREIGN KEY (id_sede) REFERENCES academia_mambolaye.sede(id_sede) 
+apellido VARCHAR(50) NOT NULL 
+);
+
+CREATE TABLE IF NOT EXISTS sede(
+id_sede INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+nombre_sede VARCHAR(100) NOT NULL,
+direccion VARCHAR(150) NOT NULL,
+telefono INT,
+id_director INT,
+FOREIGN KEY (id_director) REFERENCES director(id_director)
+);
+
+#Agregando Nivel
+CREATE TABLE IF NOT EXISTS nivel(
+id_nivel INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+descripcion VARCHAR(20) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS salon(

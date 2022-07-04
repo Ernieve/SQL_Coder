@@ -1,16 +1,24 @@
+-- DIRECTOR
+INSERT INTO academia_mambolaye.director(dni,nombre,apellido) VALUES (12345678,'Manuel','Rosas');
+INSERT INTO academia_mambolaye.director(dni,nombre,apellido) VALUES (96035596,'Beatriz','Rosas');
+
 -- SEDES
 INSERT INTO academia_mambolaye.sede(nombre_sede,direccion,telefono,id_director) VALUES ('La Huella','CABA, Bulnes 892',1161989945,1);
+INSERT INTO academia_mambolaye.sede(nombre_sede,direccion,id_director) VALUES ('Llano','Av. San Juan 1555',2);
 
 -- SALONES
 INSERT INTO academia_mambolaye.salon(nombre_salon,id_sede) VALUES ('Amarillo',1);
 INSERT INTO academia_mambolaye.salon(nombre_salon,id_sede) VALUES ('Subterraneo',1);
 INSERT INTO academia_mambolaye.salon(nombre_salon,id_sede) VALUES ('Contemporaneo',1);
+INSERT INTO academia_mambolaye.salon(nombre_salon,id_sede) VALUES ('Llanito',2);
+INSERT INTO academia_mambolaye.salon(nombre_salon,id_sede) VALUES ('Metro',2);
+INSERT INTO academia_mambolaye.salon(nombre_salon,id_sede) VALUES ('Libertar',2);
 
 -- PROFESORES
 INSERT INTO academia_mambolaye.profesor(dni,nombre,apellido,mail,telefono) VALUES (12345678,'Manuel','Rosas','manuel_rosas@mambolaye.com',1112345678);
 INSERT INTO academia_mambolaye.profesor(dni,nombre,apellido,mail,telefono) VALUES (12345668,'Beatriz','Rosas','bea_rosas@mambolaye.com',1112845678);
 INSERT INTO academia_mambolaye.profesor(dni,nombre,apellido,mail,telefono) VALUES (93123456,'Aymara','Orta','aymara@tiny.cc',1123466568);
-INSERT INTO academia_mambolaye.profesor(dni,nombre,apellido,mail,telefono) VALUES (92123456,'Erick','Tilly','ctilly1@google.com.au',1123466568);
+INSERT INTO academia_mambolaye.profesor(dni,nombre,apellido,mail,telefono) VALUES (92123456,'Erick','Lugo','ctilly1@google.com.au',1123466568);
 INSERT INTO academia_mambolaye.profesor(dni,nombre,apellido,mail,telefono) VALUES (96123456,'Hedvige','Kimmitt','hkimmitt2@chron.com',1123466568);
 INSERT INTO academia_mambolaye.profesor(dni,nombre,apellido,mail,telefono) VALUES (30122856,'Casi','Sommerling','csommerling3@nasa.gov',1123466568);
 INSERT INTO academia_mambolaye.profesor(dni,nombre,apellido,mail,telefono) VALUES (30533456,'Lamar','Dowle','ldowle4@trellian.com',1123466568);
@@ -52,6 +60,7 @@ INSERT INTO academia_mambolaye.alumno(dni,nombre,apellido,telefono,mail,fecha_na
 -- GENEROS MUSICALES
 INSERT INTO academia_mambolaye.genero_musical(nombre_genero) VALUES ('Salsa');
 INSERT INTO academia_mambolaye.genero_musical(nombre_genero) VALUES ('Bachata');
+INSERT INTO academia_mambolaye.genero_musical(nombre_genero) VALUES ('Reggaeton');
 
 -- ESTILOS BAILES
 INSERT INTO academia_mambolaye.estilo(nombre_estilo,id_genero) VALUES ('Mambo on2 (General)',1); 
@@ -59,17 +68,15 @@ INSERT INTO academia_mambolaye.estilo(nombre_estilo,id_genero) VALUES ('Mambo on
 INSERT INTO academia_mambolaye.estilo(nombre_estilo,id_genero) VALUES ('Casino',1); 
 INSERT INTO academia_mambolaye.estilo(nombre_estilo,id_genero) VALUES ('Pacheco',2); 
 INSERT INTO academia_mambolaye.estilo(nombre_estilo,id_genero) VALUES ('Urbano',2); 
+INSERT INTO academia_mambolaye.estilo(nombre_estilo,id_genero) VALUES ('Free Style / Urbano',3);
 
 -- TIPO DE PAGO
 INSERT INTO academia_mambolaye.tipo_pago(descripcion_pago) VALUES ('Visa');
 INSERT INTO academia_mambolaye.tipo_pago(descripcion_pago) VALUES ('MasterCard');
 INSERT INTO academia_mambolaye.tipo_pago(descripcion_pago) VALUES ('Efectivo');
+INSERT INTO academia_mambolaye.tipo_pago(descripcion_pago) VALUES ('Transfer / Deb. Au.');
 
 -- HORARIO CLASES
-INSERT INTO academia_mambolaye.horario_clase(dia,hora_inicio,hora_fin) VALUES ('Lunes','17:30','19:00');
-INSERT INTO academia_mambolaye.horario_clase(dia,hora_inicio,hora_fin) VALUES ('Lunes','19:00','20:30');
-INSERT INTO academia_mambolaye.horario_clase(dia,hora_inicio,hora_fin) VALUES ('Miercoles','18:30','20:00');
-INSERT INTO academia_mambolaye.horario_clase(dia,hora_inicio,hora_fin) VALUES ('Miercoles','20:00','21:30');
 INSERT INTO academia_mambolaye.horario_clase(dia,hora_inicio,hora_fin) VALUES ('Jueves','17:30','19:00');
 INSERT INTO academia_mambolaye.horario_clase(dia,hora_inicio,hora_fin) VALUES ('Jueves','19:00','20:30');
 INSERT INTO academia_mambolaye.horario_clase(dia,hora_inicio,hora_fin) VALUES ('Sabado','17:30','19:00');
@@ -80,9 +87,6 @@ INSERT INTO academia_mambolaye.nivel(descripcion) VALUES ('Inicial');
 INSERT INTO academia_mambolaye.nivel(descripcion) VALUES ('Basico');
 INSERT INTO academia_mambolaye.nivel(descripcion) VALUES ('Avanzado');
 
--- DIRECTOR
-INSERT INTO academia_mambolaye.director(dni,nombre,apellido,id_sede) VALUES (12345678,'Manuel','Rosas',1);
-
 -- MEMBRESIA
 INSERT INTO academia_mambolaye.membresia(id_alumno,id_tipo_pago) VALUES (1,3);
 INSERT INTO academia_mambolaye.membresia(id_alumno,id_tipo_pago) VALUES (2,1);
@@ -90,16 +94,17 @@ INSERT INTO academia_mambolaye.membresia(id_alumno,id_tipo_pago) VALUES (3,2);
 INSERT INTO academia_mambolaye.membresia(id_alumno,id_tipo_pago) VALUES (4,2);
 INSERT INTO academia_mambolaye.membresia(id_alumno,id_tipo_pago) VALUES (5,3);
 INSERT INTO academia_mambolaye.membresia(id_alumno,id_tipo_pago) VALUES (6,1);
-INSERT INTO academia_mambolaye.membresia(id_alumno,id_tipo_pago) VALUES (7,2);
+INSERT INTO academia_mambolaye.membresia(id_alumno,id_tipo_pago) VALUES (7,4);
 INSERT INTO academia_mambolaye.membresia(id_alumno,id_tipo_pago) VALUES (8,3);
 INSERT INTO academia_mambolaye.membresia(id_alumno,id_tipo_pago) VALUES (9,2);
 INSERT INTO academia_mambolaye.membresia(id_alumno,id_tipo_pago) VALUES (10,1);
 INSERT INTO academia_mambolaye.membresia(id_alumno,id_tipo_pago) VALUES (11,3);
 
 -- CLASE
-INSERT INTO academia_mambolaye.clase(id_profesor,id_horario,id_estilo,id_salon,id_nivel) VALUES (1,8,1,1,2);
+INSERT INTO academia_mambolaye.clase(id_profesor,id_horario,id_estilo,id_salon,id_nivel) VALUES (1,1,1,1,2);
 INSERT INTO academia_mambolaye.clase(id_profesor,id_horario,id_estilo,id_salon,id_nivel) VALUES (2,1,2,2,1);
-INSERT INTO academia_mambolaye.clase(id_profesor,id_horario,id_estilo,id_salon,id_nivel) VALUES (3,2,3,3,3);
+INSERT INTO academia_mambolaye.clase(id_profesor,id_horario,id_estilo,id_salon,id_nivel) VALUES (4,2,3,3,3);
+INSERT INTO academia_mambolaye.clase(id_profesor,id_horario,id_estilo,id_salon,id_nivel) VALUES (3,2,3,6,3);
 
 -- INSCRIPCION
 INSERT INTO academia_mambolaye.inscripcion(id_membresia,id_clase) VALUES (1,1);
