@@ -1,4 +1,5 @@
 -- SP Para mostrar datos ordenados de una tabla indicada por el usuario
+drop procedure if exists `sp_orden_x_campo`;
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_orden_x_campo`(IN p_table VARCHAR(100), IN p_field VARCHAR(100), IN p_order INT)
 BEGIN
@@ -22,6 +23,7 @@ END$$
 DELIMITER ;
 
 -- SP Eliminar alumno enviando por parametro el DNI
+drop procedure if exists `sp_delete_alumno`;
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_delete_alumno`(IN p_dni INT)
 BEGIN
