@@ -1,3 +1,6 @@
+#Habilitar eliminación y actualización en cascada
+SET sql_safe_updates=0;
+
 CREATE SCHEMA academia_mambolaye;
 
 USE academia_mambolaye;
@@ -107,4 +110,14 @@ id_clase INT NOT NULL,
 fecha_inscripcion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 FOREIGN KEY (id_membresia) REFERENCES academia_mambolaye.membresia(id_membresia),
 FOREIGN KEY (id_clase) REFERENCES academia_mambolaye.clase(id_clase)
+);
+
+#LOGS
+CREATE TABLE IF NOT EXISTS logs(
+	fecha_hora DATETIME,
+    usuario VARCHAR(100),
+    bd VARCHAR(100),
+    version VARCHAR(20),
+    tabla VARCHAR(20),
+    accion VARCHAR(15)
 );
