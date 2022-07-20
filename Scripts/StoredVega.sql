@@ -27,7 +27,7 @@ drop procedure if exists `sp_delete_alumno`;
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_delete_alumno`(IN p_dni INT)
 BEGIN
-	IF p_dni = '' or p_dni = 0 then
+	IF length(p_dni) < 8 then
 		SELECT 'ERROR: no se pudo eliminar el registro indicado';
 	ELSE
 		DELETE FROM academia_mambolaye.alumno WHERE dni = p_dni;

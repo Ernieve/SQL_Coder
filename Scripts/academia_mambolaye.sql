@@ -116,7 +116,7 @@ CREATE TABLE IF NOT EXISTS inscripcion(
 id_membresia INT NOT NULL,
 id_clase INT NOT NULL,
 fecha_inscripcion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-FOREIGN KEY (id_membresia) REFERENCES academia_mambolaye.membresia(id_membresia),
+FOREIGN KEY (id_membresia) REFERENCES academia_mambolaye.membresia(id_membresia) ON DELETE CASCADE,
 FOREIGN KEY (id_clase) REFERENCES academia_mambolaye.clase(id_clase)
 );
 
