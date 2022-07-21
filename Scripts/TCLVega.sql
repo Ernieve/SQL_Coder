@@ -2,7 +2,6 @@ USE academia_mambolaye;
 
 set sql_safe_updates=0;
 
-select * from alumno;
 -- Transaction con ROLLBACK
 START TRANSACTION;
 	DELETE FROM academia_mambolaye.alumno WHERE id_alumno = 1;
