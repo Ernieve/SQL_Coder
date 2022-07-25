@@ -1,4 +1,4 @@
--- Tablas usadas >> alumno, clase, director, estilo, genero_musical, historico_alumno, horario_clase, inscripcion, logs, membresia, nivel, profesor, salon, sede y tipo_pago
+-- Tablas usadas >>> alumno, clase, director, estilo, genero_musical, historico_alumno, horario_clase, inscripcion, logs, membresia, nivel, profesor, salon, sede y tipo_pago
 
 -- MySQL dump 10.13  Distrib 8.0.29, for Win64 (x86_64)
 --
