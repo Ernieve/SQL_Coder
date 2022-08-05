@@ -111,3 +111,7 @@ INSERT INTO academia_mambolaye.inscripcion(id_membresia,id_clase) VALUES (1,1);
 INSERT INTO academia_mambolaye.inscripcion(id_membresia,id_clase) VALUES (2,2);
 INSERT INTO academia_mambolaye.inscripcion(id_membresia,id_clase) VALUES (3,3);
 INSERT INTO academia_mambolaye.inscripcion(id_membresia,id_clase) VALUES (1,3);
+insert into academia_mambolaye.inscripcion(id_membresia,id_clase) values (25,1);
+insert into academia_mambolaye.inscripcion(id_membresia,id_clase) values (4,1);
+insert into academia_mambolaye.inscripcion(id_membresia,id_clase) values (5,1);
+insert into academia_mambolaye.inscripcion(id_membresia,id_clase) values (6,1);
