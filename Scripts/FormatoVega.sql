@@ -15,7 +15,7 @@ CREATE DEFINER=`root`@`localhost` FUNCTION `ult_alumno_x_clase`(p_id_clase INT) 
 READS SQL DATA
 BEGIN
 	DECLARE resultado varchar(255);
-    set resultado = (select max(al.nombre) from inscripcion ins join membresia mem on (ins.id_membresia = mem.id_membresia)
+    set resultado = (select max(concat(al.nombre, ' ', al.apellido)) from inscripcion ins join membresia mem on (ins.id_membresia = mem.id_membresia)
 	join alumno al on (al.id_alumno = mem.id_alumno) join clase cla on (ins.id_clase = cla.id_clase) where ins.id_clase = p_id_clase);
     RETURN resultado;
 END$$
